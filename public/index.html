@@ -3,25 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETCSA Ingeniería | Líderes en Ingeniería Civil y Ambiental</title>
-    <meta name="description" content="30+ años de experiencia en interventoría, consultoría y construcción de obras civiles. Especialistas en agua potable, saneamiento y tecnología sin zanja.">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
+    <title>FTAPPGAME - Portafolio Empresarial</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
         :root {
-            --primary-color: #1e40af;
-            --secondary-color: #3b82f6;
-            --accent-color: #10b981;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f8fafc;
-            --white: #ffffff;
-            --gradient: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #10b981 100%);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --text-primary: #ffffff;
+            --text-secondary: #b8c5d6;
+            --accent-color: #ff6b6b;
         }
 
         * {
@@ -31,125 +25,57 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-gradient);
+            color: var(--text-primary);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* Navigation */
-        nav {
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom cursor */
+        body {
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23667eea" opacity="0.8"/></svg>'), auto;
+        }
+
+        a, button {
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23ff6b6b" opacity="0.8"/></svg>'), pointer;
+        }
+
+        /* Animated background particles */
+        .particles {
             position: fixed;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        nav.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: var(--shadow);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .logo i {
-            margin-right: 0.5rem;
-            font-size: 2rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-menu a:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
             left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu a:hover::after {
             width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(102, 126, 234, 0.3) 0%, transparent 50%);
+            animation: particleMove 20s ease-in-out infinite;
         }
 
-        .cta-button {
-            background: var(--gradient);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 3px 0;
-            transition: 0.3s;
+        @keyframes particleMove {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(1deg); }
+            50% { transform: translateY(-10px) rotate(-1deg); }
+            75% { transform: translateY(-30px) rotate(0.5deg); }
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
-            background: var(--gradient);
+            height: 100vh;
+            background: var(--primary-gradient);
             display: flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -161,569 +87,539 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,0 1000,300 1000,1000 0,700"/><polygon fill="%23ffffff05" points="200,100 800,50 900,800 100,900"/></svg>');
+            animation: float 25s ease-in-out infinite;
         }
 
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
+        .hero-content {
             z-index: 2;
+            position: relative;
+            max-width: 900px;
+            padding: 0 2rem;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: white;
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
             margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero-content .highlight {
-            background: linear-gradient(45deg, #fbbf24, #f59e0b);
+            font-weight: 800;
+            background: linear-gradient(45deg, #fff, #f0f0f0, #fff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease-in-out infinite, slideInUp 1s ease-out;
+            letter-spacing: -0.02em;
         }
 
-        .hero-content p {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            line-height: 1.6;
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: var(--shadow);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: var(--primary-color);
-        }
-
-        .hero-visual {
-            position: relative;
-            height: 500px;
-        }
-
-        .floating-card {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 1.5rem;
-            color: white;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-card:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-card:nth-child(2) {
-            top: 50%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .floating-card:nth-child(3) {
-            bottom: 10%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .stats-card {
-            text-align: center;
-        }
-
-        .stats-card .number {
-            font-size: 2rem;
-            font-weight: 700;
-            display: block;
-        }
-
-        .stats-card .label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 6rem 0;
-            background: var(--bg-light);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            font-size: 1.125rem;
-            color: var(--text-light);
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            animation: slideInUp 1s ease-out 0.3s both;
+            font-weight: 400;
             max-width: 600px;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 45px;
+            background: var(--secondary-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: slideInUp 1s ease-out 0.6s both;
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
             position: relative;
             overflow: hidden;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .service-card::before {
+        .cta-button::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
-            height: 4px;
-            background: var(--gradient);
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
         }
 
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: white;
-            font-size: 2rem;
+        .cta-button:hover::before {
+            left: 100%;
         }
 
-        .service-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
+        .cta-button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(240, 147, 251, 0.5);
         }
 
-        .service-card p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features {
-            list-style: none;
-        }
-
-        .service-features li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-        }
-
-        .service-features li i {
-            color: var(--accent-color);
-            margin-right: 0.5rem;
-        }
-
-        /* About Section */
-        .about {
-            padding: 6rem 0;
-            background: white;
-        }
-
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-content h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-        }
-
-        .about-content p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            font-size: 1.125rem;
-        }
-
-        .achievements {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .achievement {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--bg-light);
-            border-radius: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .achievement:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-
-        .achievement .number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
-        }
-
-        .achievement .label {
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .about-visual {
-            position: relative;
-            height: 400px;
-            background: var(--gradient);
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .about-visual::before {
-            content: '';
-            position: absolute;
+        /* Navigation */
+        .nav {
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="rgba(255,255,255,0.2)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots)"/></svg>');
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
         }
 
         /* Portfolio Section */
         .portfolio {
-            padding: 6rem 0;
-            background: var(--bg-light);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .portfolio-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .portfolio-image {
-            height: 200px;
-            background: var(--gradient);
+            padding: 120px 0;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
             position: relative;
-            overflow: hidden;
         }
 
-        .portfolio-image::before {
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 4rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .project-card {
+            background: var(--glass-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            position: relative;
+            cursor: pointer;
+            height: fit-content;
+        }
+
+        .project-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="none"/><path d="M0 0h200v200H0z" fill="rgba(255,255,255,0.1)"/><path d="M20 20h40v40H20zM80 20h40v40H80zM140 20h40v40h-40zM20 80h40v40H20zM80 80h40v40H80zM140 80h40v40h-40zM20 140h40v40H20zM80 140h40v40H80zM140 140h40v40h-40z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 24px;
         }
 
-        .portfolio-content {
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 40px 80px rgba(102, 126, 234, 0.25);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .project-card:hover .project-image::before {
+            left: 100%;
+        }
+
+        .project-content {
             padding: 2rem;
         }
 
-        .portfolio-content h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            letter-spacing: -0.01em;
         }
 
-        .portfolio-content p {
-            color: var(--text-light);
-            margin-bottom: 1rem;
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
-        .portfolio-tags {
+        .project-tech {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.7rem;
         }
 
-        .tag {
-            background: var(--bg-light);
-            color: var(--text-light);
-            padding: 0.25rem 0.75rem;
+        .tech-tag {
+            background: rgba(102, 126, 234, 0.15);
+            color: #8bb5ff;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: rgba(102, 126, 234, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Featured project styling */
+        .featured-project {
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 40px rgba(255, 107, 107, 0.3);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.875rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* About Section */
+        .about {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="100" fill="%23667eea" opacity="0.03"/><circle cx="800" cy="800" r="150" fill="%23ff6b6b" opacity="0.03"/></svg>');
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content p {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2.5rem;
+            background: var(--glass-bg);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .stat-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .stat-number {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 500;
         }
 
         /* Contact Section */
         .contact {
-            padding: 6rem 0;
-            background: var(--text-dark);
-            color: white;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-info p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2rem;
-            font-size: 1.125rem;
-        }
-
-        .contact-details {
-            space-y: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item i {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
+            padding: 120px 0;
+            background: var(--dark-gradient);
         }
 
         .contact-form {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            padding: 3rem;
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-family: inherit;
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
         }
 
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .submit-btn {
             width: 100%;
-            background: var(--gradient);
+            padding: 1.2rem;
+            background: var(--primary-gradient);
             color: white;
-            padding: 1rem;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
+            font-size: 1.1rem;
             font-weight: 600;
-            font-size: 1rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
         }
 
         .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        /* Footer */
-        footer {
-            background: #111827;
-            color: white;
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent-color);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
             transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
         }
 
         /* Animations */
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-30px) rotate(1deg); }
+            50% { transform: translateY(-15px) rotate(-1deg); }
+            75% { transform: translateY(-40px) rotate(0.5deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .contact-form {
+                margin: 0 1rem;
+                padding: 2rem;
+            }
+        }
+
+        /* Scroll animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .fade-in.visible {
@@ -731,344 +627,326 @@
             transform: translateY(0);
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: flex;
-            }
-
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-container,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid,
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .achievements {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-container {
-                padding: 0 1rem;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .service-card,
-            .contact-form {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Scroll animations */
-        .scroll-indicator {
+        /* Loading animation */
+        .loading {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
-            background: var(--gradient);
-            transform-origin: 0%;
-            transform: scaleX(0);
+            height: 100%;
+            background: var(--dark-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator" id="scrollIndicator"></div>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="particles"></div>
 
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav class="nav" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">
-                <i class="fas fa-building"></i>
-                ETCSA
-            </a>
-            <ul class="nav-menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+            <div class="logo">FTAPPGAME</div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#portfolio">Portafolio</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#contact">Contacto</a></li>
             </ul>
-            <a href="#contacto" class="cta-button">Solicitar Cotización</a>
-            <div class="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Construyendo el <span class="highlight">Futuro</span> de Colombia</h1>
-                <p>Con más de 30 años de experiencia, somos líderes en ingeniería civil, sanitaria y ambiental. Transformamos ideas en realidades que mejoran la calidad de vida de las comunidades.</p>
-                <div class="hero-buttons">
-                    <a href="#servicios" class="btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        Nuestros Servicios
-                    </a>
-                    <a href="#proyectos" class="btn-secondary">
-                        <i class="fas fa-play"></i>
-                        Ver Proyectos
-                    </a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="floating-card stats-card">
-                    <span class="number">30+</span>
-                    <span class="label">Años de Experiencia</span>
-                </div>
-                <div class="floating-card stats-card">
-                    <span class="number">150+</span>
-                    <span class="label">Proyectos Ejecutados</span>
-                </div>
-                <div class="floating-card stats-card">
-                    <span class="number">$120B</span>
-                    <span class="label">Pesos Ejecutados</span>
-                </div>
-            </div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>FTAPPGAME</h1>
+            <p>Transformamos ideas en soluciones digitales extraordinarias con tecnología de vanguardia y seguridad excepcional</p>
+            <a href="#portfolio" class="cta-button">
+                <span>Explorar Proyectos</span>
+                <span>→</span>
+            </a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="servicios">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2>Nuestros Servicios Especializados</h2>
-                <p>Ofrecemos soluciones integrales en ingeniería con los más altos estándares de calidad y tecnología de vanguardia</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-eye"></i>
+            <h2 class="section-title fade-in">Nuestros Proyectos</h2>
+            <div class="projects-grid">
+                
+                <!-- FTAPPGAME - Producto Insignia -->
+                <div class="project-card featured-project fade-in" onclick="window.open('https://ftappgame-web-wmo6.vercel.app/', '_blank')">
+                    <div class="featured-badge">PRODUCTO ESTRELLA</div>
+                    <div class="project-image" style="background: linear-gradient(135deg, #8b5a8c 0%, #6a1b9a 50%, #4a148c 100%); display: flex; align-items: center; justify-content: center; color: #ff1493; font-size: 4rem;">
+                        🎮
                     </div>
-                    <h3>Interventoría</h3>
-                    <p>Control técnico, administrativo y financiero de proyectos de construcción con los más altos estándares de calidad.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Supervisión técnica especializada</li>
-                        <li><i class="fas fa-check"></i> Control de calidad integral</li>
-                        <li><i class="fas fa-check"></i> Gestión de cronogramas</li>
-                        <li><i class="fas fa-check"></i> Informes especializados</li>
-                    </ul>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-drafting-compass"></i>
+                    <div class="project-content">
+                        <h3 class="project-title">FTAPPGAME - La Revolución de los Juegos</h3>
+                        <p class="project-description">Plataforma de juegos de apuestas revolucionaria con experiencia ultra rápida, seguridad 100% garantizada y premios increíbles. Tecnología de última generación para gaming instantáneo.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag" style="background: rgba(255, 107, 107, 0.2); color: #ff6b6b; border-color: rgba(255, 107, 107, 0.3);">Gaming Platform</span>
+                            <span class="tech-tag" style="background: rgba(255, 107, 107, 0.2); color: #ff6b6b; border-color: rgba(255, 107, 107, 0.3);">Real-time</span>
+                            <span class="tech-tag" style="background: rgba(255, 107, 107, 0.2); color: #ff6b6b; border-color: rgba(255, 107, 107, 0.3);">Blockchain Security</span>
+                            <span class="tech-tag" style="background: rgba(255, 107, 107, 0.2); color: #ff6b6b; border-color: rgba(255, 107, 107, 0.3);">Prize System</span>
+                        </div>
                     </div>
-                    <h3>Consultoría en Ingeniería</h3>
-                    <p>Estudios, diseños y consultorías especializadas en ingeniería civil, sanitaria y ambiental.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Estudios de factibilidad</li>
-                        <li><i class="fas fa-check"></i> Diseños hidro-sanitarios</li>
-                        <li><i class="fas fa-check"></i> Evaluación ambiental</li>
-                        <li><i class="fas fa-check"></i> Modelación hidráulica</li>
-                    </ul>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-hard-hat"></i>
+
+                <!-- J&I Cleaning Services -->
+                <div class="project-card fade-in" onclick="window.open('https://www.jandicleaningservice.com/', '_blank')">
+                    <div class="project-image" style="background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%); display: flex; align-items: center; justify-content: center; color: white; position: relative; overflow: hidden;">
+                        <div style="text-align: center;">
+                            <div style="background: white; color: #4ecdc4; padding: 10px 20px; border-radius: 10px; font-weight: bold; font-size: 1.2rem;">
+                                J&I CLEANING
+                            </div>
+                            <div style="margin-top: 10px; font-size: 0.9rem;">SERVICES USA LLC</div>
+                        </div>
                     </div>
-                    <h3>Construcción</h3>
-                    <p>Ejecución de obras civiles con tecnología avanzada y cumplimiento de especificaciones técnicas.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Obras de infraestructura</li>
-                        <li><i class="fas fa-check"></i> Sistemas de tratamiento</li>
-                        <li><i class="fas fa-check"></i> Redes de acueducto</li>
-                        <li><i class="fas fa-check"></i> Plantas de tratamiento</li>
-                    </ul>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
+                    <div class="project-content">
+                        <h3 class="project-title">J&I Cleaning Services</h3>
+                        <p class="project-description">Sitio web profesional para empresa de servicios de limpieza con más de 5 años de experiencia. Plataforma optimizada para captar clientes y mostrar servicios especializados.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive Design</span>
+                        </div>
                     </div>
-                    <h3>Tecnología Sin Zanja</h3>
-                    <p>Especialistas en técnicas no destructivas: Pipe Jacking, CIPP y Ramming para infraestructura urbana.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Pipe Jacking</li>
-                        <li><i class="fas fa-check"></i> CIPP (Rehabilitación)</li>
-                        <li><i class="fas fa-check"></i> Perforación dirigida</li>
-                        <li><i class="fas fa-check"></i> Mínimo impacto urbano</li>
-                    </ul>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-project-diagram"></i>
+
+                <!-- Classgap -->
+                <div class="project-card fade-in" onclick="window.open('https://www.classgap.com/es-co', '_blank')">
+                    <div class="project-image" style="background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%); display: flex; align-items: center; justify-content: center; color: white; position: relative;">
+                        <div style="text-align: center;">
+                            <div style="background: white; padding: 8px 16px; border-radius: 8px; margin-bottom: 15px; display: inline-block;">
+                                <span style="color: #3b82f6; font-weight: bold; font-size: 1.3rem;">Classgap</span>
+                            </div>
+                            <div style="font-size: 0.9rem;">Aprende con clases particulares online</div>
+                            <div style="font-size: 0.8rem; margin-top: 5px; opacity: 0.8;">desde cualquier parte del mundo</div>
+                        </div>
                     </div>
-                    <h3>Gerencia de Proyectos</h3>
-                    <p>Gestión integral de proyectos desde la concepción hasta la entrega, garantizando éxito en tiempo y presupuesto.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Planificación estratégica</li>
-                        <li><i class="fas fa-check"></i> Control de costos</li>
-                        <li><i class="fas fa-check"></i> Gestión de riesgos</li>
-                        <li><i class="fas fa-check"></i> Coordinación multidisciplinaria</li>
-                    </ul>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-leaf"></i>
+                    <div class="project-content">
+                        <h3 class="project-title">Classgap - Plataforma Educativa</h3>
+                        <p class="project-description">Plataforma educativa que conecta estudiantes con profesores particulares online. Sistema de clases virtuales con más de 100 materias disponibles y excelentes calificaciones.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Video Streaming</span>
+                            <span class="tech-tag">Real-time</span>
+                        </div>
                     </div>
-                    <h3>Ingeniería Ambiental</h3>
-                    <p>Soluciones sostenibles para el manejo ambiental y cumplimiento de normativas vigentes.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Estudios de impacto ambiental</li>
-                        <li><i class="fas fa-check"></i> Planes de manejo ambiental</li>
-                        <li><i class="fas fa-check"></i> Monitoreo y seguimiento</li>
-                        <li><i class="fas fa-check"></i> Licenciamiento ambiental</li>
-                    </ul>
                 </div>
+
+                <!-- PeakU -->
+                <div class="project-card fade-in" onclick="window.open('https://peaku.co/es', '_blank')">
+                    <div class="project-image" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); display: flex; align-items: center; justify-content: center; color: white; position: relative;">
+                        <div style="text-align: center;">
+                            <div style="background: white; padding: 8px 16px; border-radius: 8px; margin-bottom: 15px; display: inline-block;">
+                                <span style="color: #059669; font-weight: bold; font-size: 1.4rem;">PeakU</span>
+                            </div>
+                            <div style="font-size: 0.9rem;">Multiplica candidatos y fíltralos</div>
+                            <div style="font-size: 0.8rem; margin-top: 5px; opacity: 0.8;">en tiempo récord</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">PeakU - Gestión de Talento</h3>
+                        <p class="project-description">Plataforma de RRHH para multiplicar candidatos y filtrarlos en tiempo récord. Encuentra el candidato perfecto rápidamente con herramientas avanzadas de selección.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Analytics</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leal -->
+                <div class="project-card fade-in" onclick="window.open('https://canales.leal.co/autenticacion/login', '_blank')">
+                    <div class="project-image" style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                        <div style="text-align: center;">
+                            <div style="background: white; padding: 8px 20px; border-radius: 25px; margin-bottom: 15px; display: inline-block;">
+                                <span style="color: #f59e0b; font-weight: bold; font-size: 1.6rem;">leal</span>
+                            </div>
+                            <div style="color: #1f2937; font-size: 0.9rem; font-weight: bold;">¡Descarga la aplicación!</div>
+                            <div style="color: #1f2937; font-size: 0.8rem; margin-top: 5px;">Y haz parte de los millones de usuarios</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Leal - App de Recompensas</h3>
+                        <p class="project-description">Aplicación móvil de recompensas y cashback utilizada por millones de usuarios. Permite ganar puntos en supermercados y disfrutar de increíbles beneficios.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Payment Systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AmeriKConecta -->
+                <div class="project-card fade-in" onclick="window.open('https://amerikconecta.com/', '_blank')">
+                    <div class="project-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); display: flex; align-items: center; justify-content: center; color: white; position: relative;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 10px;">
+                                <span style="color: #c4b5fd;">AMERIK</span><span style="color: #f472b6;">Conecta</span>
+                            </div>
+                            <div style="font-size: 0.9rem; opacity: 0.9;">Conectamos tu visión</div>
+                            <div style="font-size: 0.9rem; opacity: 0.9;">con el mundo digital</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AmeriKConecta - Marketing Digital</h3>
+                        <p class="project-description">Agencia de marketing digital que conecta tu visión con el mundo digital. Servicios completos para potenciar tu presencia en línea y llevar tu negocio al siguiente nivel.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">SEO Optimization</span>
+                            <span class="tech-tag">Analytics</span>
+                            <span class="tech-tag">Social Media APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Korut Jewelry -->
+                <div class="project-card fade-in" onclick="window.open('https://www.korutjewelry.co/', '_blank')">
+                    <div class="project-image" style="background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); display: flex; align-items: center; justify-content: center; color: white; position: relative;">
+                        <div style="text-align: center;">
+                            <div style="background: white; padding: 8px 16px; border-radius: 8px; margin-bottom: 15px; display: inline-block;">
+                                <span style="color: #d4af37; font-weight: bold; font-size: 1.4rem;">Korut</span>
+                            </div>
+                            <div style="font-size: 1rem; font-weight: bold;">Nueva Colección Libertad</div>
+                            <div style="font-size: 0.8rem; margin-top: 5px; opacity: 0.8;">Ver Más →</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Korut Jewelry - E-Commerce Luxury</h3>
+                        <p class="project-description">Tienda online de joyería de lujo con nueva colección "Libertad". E-commerce completo con catálogo elegante, carrito de compras y experiencia premium para el usuario.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">E-commerce</span>
+                            <span class="tech-tag">Shopify</span>
+                            <span class="tech-tag">Payment Gateway</span>
+                            <span class="tech-tag">Luxury Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ethical Hacking Services -->
+                <div class="project-card fade-in" onclick="alert('Servicios de Hacking Ético - Contacta para más información')" style="border: 2px solid #dc2626; box-shadow: 0 0 30px rgba(220, 38, 38, 0.3);">
+                    <div class="project-image" style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); display: flex; align-items: center; justify-content: center; color: white; position: relative;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.5rem; margin-bottom: 10px;">🛡️</div>
+                            <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 5px;">Hacking Ético</div>
+                            <div style="font-size: 0.9rem; opacity: 0.9;">Análisis de Vulnerabilidades</div>
+                            <div style="font-size: 0.8rem; margin-top: 5px; opacity: 0.8;">Pentesting & SAST</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" style="color: #dc2626;">Servicios de Ciberseguridad</h3>
+                        <p class="project-description">Análisis de seguridad especializado en código fuente mediante técnicas de análisis de vulnerabilidades estáticas. Pentesting ético y auditorías de seguridad completas según estándares ID-011-DGTIC.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag" style="background: rgba(220, 38, 38, 0.2); color: #dc2626; border-color: rgba(220, 38, 38, 0.3);">Pentesting</span>
+                            <span class="tech-tag" style="background: rgba(220, 38, 38, 0.2); color: #dc2626; border-color: rgba(220, 38, 38, 0.3);">SAST</span>
+                            <span class="tech-tag" style="background: rgba(220, 38, 38, 0.2); color: #dc2626; border-color: rgba(220, 38, 38, 0.3);">Vulnerability Assessment</span>
+                            <span class="tech-tag" style="background: rgba(220, 38, 38, 0.2); color: #dc2626; border-color: rgba(220, 38, 38, 0.3);">OWASP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App de Movilidad -->
+                <div class="project-card fade-in" onclick="alert('Proyecto en desarrollo - Más información próximamente')">
+                    <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; color: white;">
+                        🚗
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">App de Movilidad Inteligente</h3>
+                        <p class="project-description">Aplicación de transporte multimodal con IA para optimización de rutas, pagos integrados y enfoque en sostenibilidad ambiental. Conectividad total para el futuro del transporte.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Google Maps API</span>
+                            <span class="tech-tag">Microservices</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smart Home Platform -->
+                <div class="project-card fade-in" onclick="alert('Proyecto en desarrollo - Más información próximamente')">
+                    <div class="project-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; color: white;">
+                        🏠
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Smart Home Platform</h3>
+                        <p class="project-description">Ecosistema completo para hogares inteligentes con control por voz, automatización avanzada y análisis predictivo de consumo energético. El futuro de la domótica.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Raspberry Pi</span>
+                            <span class="tech-tag">MQTT</span>
+                            <span class="tech-tag">TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="nosotros">
+    <section id="about" class="about">
         <div class="container">
-            <div class="about-container">
-                <div class="about-content fade-in">
-                    <h2>30 Años Construyendo Confianza</h2>
-                    <p>Desde 1988, ETCSA Ingeniería se ha consolidado como una empresa líder en el sector de la ingeniería civil, sanitaria y ambiental en Colombia. Nuestro compromiso inquebrantable con la excelencia y la innovación nos ha permitido participar en más de 150 proyectos que han transformado comunidades a lo largo del país.</p>
-                    <p>Especializados en tecnologías de vanguardia como Pipe Jacking, CIPP y Ramming, somos pioneros en técnicas no destructivas que minimizan el impacto urbano mientras maximizamos la eficiencia de la infraestructura.</p>
-                    <div class="achievements">
-                        <div class="achievement">
-                            <span class="number">30+</span>
-                            <span class="label">Años de Experiencia</span>
-                        </div>
-                        <div class="achievement">
-                            <span class="number">150+</span>
-                            <span class="label">Proyectos Ejecutados</span>
-                        </div>
-                        <div class="achievement">
-                            <span class="number">$120B</span>
-                            <span class="label">Pesos Ejecutados</span>
-                        </div>
-                        <div class="achievement">
-                            <span class="number">100%</span>
-                            <span class="label">Satisfacción Cliente</span>
-                        </div>
+            <h2 class="section-title fade-in">Sobre Nosotros</h2>
+            <div class="about-content fade-in">
+                <p>
+                    Somos una empresa líder en desarrollo de soluciones tecnológicas innovadoras y servicios de ciberseguridad de vanguardia. Con más de una década de experiencia, 
+                    hemos transformado ideas en realidades digitales que impactan positivamente en los negocios de nuestros clientes a nivel global.
+                </p>
+                <p>
+                    Nuestro equipo de expertos combina creatividad, tecnología de última generación y metodologías ágiles para entregar 
+                    proyectos excepcionales. Ofrecemos servicios especializados en <strong>hacking ético</strong>, análisis de vulnerabilidades estáticas (SAST), 
+                    pentesting y auditorías de seguridad cumpliendo con los más altos estándares internacionales.
+                </p>
+                <div class="stats">
+                    <div class="stat-item fade-in">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Proyectos Completados</div>
                     </div>
-                </div>
-                <div class="about-visual fade-in">
-                    <!-- Visual representation of the company -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="proyectos">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Proyectos Destacados</h2>
-                <p>Conoce algunos de nuestros proyectos más emblemáticos que han contribuido al desarrollo de infraestructura en Colombia</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-card fade-in">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h3>Planta de Tratamiento de Agua Potable</h3>
-                        <p>Diseño y construcción de planta de tratamiento con capacidad para 50,000 habitantes, implementando tecnología de última generación.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Agua Potable</span>
-                            <span class="tag">Diseño</span>
-                            <span class="tag">Construcción</span>
-                        </div>
+                    <div class="stat-item fade-in">
+                        <div class="stat-number">45+</div>
+                        <div class="stat-label">Clientes Satisfechos</div>
                     </div>
-                </div>
-                <div class="portfolio-card fade-in">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h3>Red de Alcantarillado Sin Zanja</h3>
-                        <p>Implementación de tecnología Pipe Jacking para instalación de 2km de alcantarillado sin interrumpir el tráfico urbano.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Pipe Jacking</span>
-                            <span class="tag">Alcantarillado</span>
-                            <span class="tag">Innovación</span>
-                        </div>
+                    <div class="stat-item fade-in">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Años de Experiencia</div>
                     </div>
-                </div>
-                <div class="portfolio-card fade-in">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h3>Interventoría Vial Nacional</h3>
-                        <p>Supervisión técnica de obras viales en carreteras nacionales, garantizando cumplimiento de especificaciones INVIAS.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Interventoría</span>
-                            <span class="tag">Vial</span>
-                            <span class="tag">INVIAS</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-card fade-in">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h3>Sistema de Tratamiento de Aguas Residuales</h3>
-                        <p>Consultoría y diseño de PTAR para municipio de 30,000 habitantes con tecnología de tratamiento biológico avanzado.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">PTAR</span>
-                            <span class="tag">Consultoría</span>
-                            <span class="tag">Ambiental</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-card fade-in">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h3>Rehabilitación de Redes con CIPP</h3>
-                        <p>Proyecto de rehabilitación de 5km de redes de acueducto utilizando tecnología CIPP, extendiendo vida útil 50 años.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">CIPP</span>
-                            <span class="tag">Rehabilitación</span>
-                            <span class="tag">Acueducto</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-card fade-in">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h3>Gerencia Integral de Megaproyecto</h3>
-                        <p>Gerencia de proyecto de infraestructura de saneamiento básico valorado en $15,000 millones de pesos.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Gerencia</span>
-                            <span class="tag">Megaproyecto</span>
-                            <span class="tag">Saneamiento</span>
-                        </div>
+                    <div class="stat-item fade-in">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Expertos en Equipo</div>
                     </div>
                 </div>
             </div>
@@ -1076,138 +954,61 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contacto">
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-container">
-                <div class="contact-info fade-in">
-                    <h2>¿Listo para tu Próximo Proyecto?</h2>
-                    <p>Contáctanos hoy mismo y descubre cómo podemos transformar tu visión en realidad. Nuestro equipo de expertos está preparado para ofrecerte las mejores soluciones en ingeniería.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Ubicación</h4>
-                                <p>Bogotá, Colombia</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Teléfono</h4>
-                                <p>+57 (1) 234-5678</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>info@etcsasingenieria.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Horario</h4>
-                                <p>Lun - Vie: 8:00 AM - 6:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
+            <h2 class="section-title fade-in">Contáctanos</h2>
+            <form class="contact-form fade-in">
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" id="name" name="name" required placeholder="Tu nombre">
                 </div>
-                
-                <div class="contact-form fade-in">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nombre Completo</label>
-                            <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico</label>
-                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Empresa</label>
-                            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Servicio de Interés</label>
-                            <select id="service" name="service" style="width: 100%; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: white; font-family: inherit;">
-                                <option value="">Selecciona un servicio</option>
-                                <option value="interventoria">Interventoría</option>
-                                <option value="consultoria">Consultoría</option>
-                                <option value="construccion">Construcción</option>
-                                <option value="tecnologia-sin-zanja">Tecnología Sin Zanja</option>
-                                <option value="gerencia">Gerencia de Proyectos</option>
-                                <option value="ambiental">Ingeniería Ambiental</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea id="message" name="message" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            Enviar Mensaje
-                        </button>
-                    </form>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="company">Empresa</label>
+                    <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
+                </div>
+                <div class="form-group">
+                    <label for="service">Servicio de Interés</label>
+                    <select id="service" name="service" style="width: 100%; padding: 1.2rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text-primary); font-size: 1rem; font-family: 'Inter', sans-serif;">
+                        <option value="">Selecciona un servicio</option>
+                        <option value="desarrollo-web">Desarrollo Web</option>
+                        <option value="apps-moviles">Apps Móviles</option>
+                        <option value="hacking-etico">Hacking Ético</option>
+                        <option value="analisis-vulnerabilidades">Análisis de Vulnerabilidades</option>
+                        <option value="pentesting">Pentesting</option>
+                        <option value="consultoria">Consultoría Tecnológica</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>ETCSA Ingeniería</h3>
-                    <p>Construyendo el futuro de Colombia con más de 30 años de experiencia en ingeniería civil, sanitaria y ambiental.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3>Servicios</h3>
-                    <ul>
-                        <li><a href="#servicios">Interventoría</a></li>
-                        <li><a href="#servicios">Consultoría en Ingeniería</a></li>
-                        <li><a href="#servicios">Construcción</a></li>
-                        <li><a href="#servicios">Tecnología Sin Zanja</a></li>
-                        <li><a href="#servicios">Gerencia de Proyectos</a></li>
-                        <li><a href="#servicios">Ingeniería Ambiental</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Sectores</h3>
-                    <ul>
-                        <li><a href="#">Agua Potable</a></li>
-                        <li><a href="#">Saneamiento Básico</a></li>
-                        <li><a href="#">Infraestructura Vial</a></li>
-                        <li><a href="#">Medio Ambiente</a></li>
-                        <li><a href="#">Tratamiento de Aguas</a></li>
-                        <li><a href="#">Obras Civiles</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contacto</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</li>
-                        <li><i class="fas fa-phone"></i> +57 (1) 234-5678</li>
-                        <li><i class="fas fa-envelope"></i> info@etcsasingenieria.com</li>
-                        <li><i class="fas fa-clock"></i> Lun - Vie: 8:00 AM - 6:00 PM</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 ETCSA Ingeniería S.A.S. Todos los derechos reservados. | Política de Privacidad | Términos de Servicio</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
+        // Loading screen
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1222,29 +1023,13 @@
             });
         });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            const scrollIndicator = document.getElementById('scrollIndicator');
-            
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-
-            // Update scroll indicator
-            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            scrollIndicator.style.transform = `scaleX(${scrollPercent / 100})`;
-        });
-
-        // Intersection Observer for animations
+        // Advanced fade in animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
@@ -1252,184 +1037,85 @@
             });
         }, observerOptions);
 
-        // Observe all fade-in elements
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Contact form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Enhanced contact form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simulate form submission
+            // Simulate loading
             const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
             
+            // Simulate API call
             setTimeout(() => {
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Mensaje Enviado';
-                submitBtn.style.background = 'var(--accent-color)';
-                
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = 'var(--gradient)';
-                    this.reset();
-                }, 2000);
+                alert('¡Gracias por contactarnos! Te responderemos en las próximas 24 horas.');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
             }, 2000);
         });
-
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navMenu = document.querySelector('.nav-menu');
-
-        mobileMenu.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            this.classList.toggle('active');
-        });
-
-        // Counter animation for statistics
-        function animateCounters() {
-            const counters = document.querySelectorAll('.number');
-            
-            counters.forEach(counter => {
-                const target = parseInt(counter.textContent.replace(/[^0-9]/g, ''));
-                const duration = 2000;
-                const step = target / (duration / 16);
-                let current = 0;
-                
-                const timer = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        counter.textContent = counter.textContent.replace(/[0-9]+/, target);
-                        clearInterval(timer);
-                    } else {
-                        counter.textContent = counter.textContent.replace(/[0-9]+/, Math.floor(current));
-                    }
-                }, 16);
-            });
-        }
-
-        // Trigger counter animation when stats come into view
-        const statsObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsSection = document.querySelector('.achievements');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
 
         // Parallax effect for hero section
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.floating-card');
+            const parallax = document.querySelector('.hero');
+            const speed = scrolled * 0.5;
             
-            parallaxElements.forEach((element, index) => {
-                const speed = 0.5 + (index * 0.1);
-                element.style.transform = `translateY(${scrolled * speed}px)`;
-            });
+            if (parallax) {
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
         });
 
-        // Add loading animation
-        window.addEventListener('load', function() {
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.5s ease';
-            
-            setTimeout(() => {
-                document.body.style.opacity = '1';
-            }, 100);
-        });
-
-        // Service card hover effects
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.02)';
+        // Add mouse move effect to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
             });
             
             card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
             });
         });
 
-        // Portfolio card interactions
-        document.querySelectorAll('.portfolio-card').forEach(card => {
-            card.addEventListener('click', function() {
-                // Add click animation
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 150);
-            });
-        });
-
-        // Enhanced mobile responsiveness
-        function handleResize() {
-            const isMobile = window.innerWidth <= 768;
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
             
-            if (isMobile) {
-                // Adjust mobile-specific behaviors
-                document.querySelectorAll('.floating-card').forEach(card => {
-                    card.style.animation = 'none';
-                });
-            } else {
-                // Re-enable animations on desktop
-                document.querySelectorAll('.floating-card').forEach(card => {
-                    card.style.animation = '';
-                });
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
             }
+            
+            type();
         }
 
-        window.addEventListener('resize', handleResize);
-        handleResize(); // Initial call
-
-        // Add scroll-to-top functionality
-        const scrollToTop = document.createElement('div');
-        scrollToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
-        scrollToTop.style.cssText = `
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-        `;
-
-        document.body.appendChild(scrollToTop);
-
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 500) {
-                scrollToTop.style.opacity = '1';
-                scrollToTop.style.visibility = 'visible';
-            } else {
-                scrollToTop.style.opacity = '0';
-                scrollToTop.style.visibility = 'hidden';
-            }
-        });
-
-        scrollToTop.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        // Initialize typing effect when page loads
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const heroTitle = document.querySelector('.hero h1');
+                if (heroTitle) {
+                    typeWriter(heroTitle, 'FTAPPGAME', 150);
+                }
+            }, 1500);
         });
     </script>
 </body>
